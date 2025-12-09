@@ -120,8 +120,12 @@
             const newQuestion = {
                 id: `q-${Date.now()}`,
                 question: "New Question",
-                answer: "Answer here",
-                images: []
+                steps: [
+                    {
+                        text: "Step 1 description",
+                        image: { url: "", caption: "" }
+                    }
+                ]
             };
             faqData.sections[sectionIndex].questions.push(newQuestion);
             renderSections();
@@ -136,37 +140,43 @@
         }
 
         // Update question
-        function updateQuestion(sectionIndex, questionIndex, field, value) {
-            faqData.sections[sectionIndex].questions[questionIndex][field] = value;
+        function updateQuestion(sectionIndex, questionIndex, value) {
+            faqData.sections[sectionIndex].questions[questionIndex].question = value;
         }
 
-        // Add image to question
-        function addImage(sectionIndex, questionIndex) {
-            const url = prompt('Enter image URL:');
-            if (url) {
-                const caption = prompt('Enter image caption (optional):');
-                if (!faqData.sections[sectionIndex].questions[questionIndex].images) {
-                    faqData.sections[sectionIndex].questions[questionIndex].images = [];
-                }
-                faqData.sections[sectionIndex].questions[questionIndex].images.push({
-                    url: url,
-                    caption: caption || ''
-                });
+        // Add step to question
+        function addStep(sectionIndex, questionIndex) {
+            if (!faqData.sections[sectionIndex].questions[questionIndex].steps) {
+                faqData.sections[sectionIndex].questions[questionIndex].steps = [];
+            }
+            faqData.sections[sectionIndex].questions[questionIndex].steps.push({
+                text: "New step",
+                image: { url: "", caption: "" }
+            });
+            renderSections();
+        }
+
+        // Delete step
+        function deleteStep(sectionIndex, questionIndex, stepIndex) {
+            if (confirm('Delete this step?')) {
+                faqData.sections[sectionIndex].questions[questionIndex].steps.splice(stepIndex, 1);
                 renderSections();
             }
         }
 
-        // Delete image
-        function deleteImage(sectionIndex, questionIndex, imageIndex) {
-            if (confirm('Delete this image?')) {
-                faqData.sections[sectionIndex].questions[questionIndex].images.splice(imageIndex, 1);
-                renderSections();
-            }
+        // Update step text
+        function updateStepText(sectionIndex, questionIndex, stepIndex, value) {
+            faqData.sections[sectionIndex].questions[questionIndex].steps[stepIndex].text = value;
         }
 
-        // Update image
-        function updateImage(sectionIndex, questionIndex, imageIndex, field, value) {
-            faqData.sections[sectionIndex].questions[questionIndex].images[imageIndex][field] = value;
+        // Update step image URL
+        function updateStepImageUrl(sectionIndex, questionIndex, stepIndex, value) {
+            faqData.sections[sectionIndex].questions[questionIndex].steps[stepIndex].image.url = value;
+        }
+
+        // Update step image caption
+        function updateStepImageCaption(sectionIndex, questionIndex, stepIndex, value) {
+            faqData.sections[sectionIndex].questions[questionIndex].steps[stepIndex].image.caption = value;
         }
 
         // Render all sections
@@ -198,7 +208,7 @@
                                     <input
                                         type="text"
                                         value="${q.question}"
-                                        onchange="updateQuestion(${sIdx}, ${qIdx}, 'question', this.value)"
+                                        onchange="updateQuestion(${sIdx}, ${qIdx}, this.value)"
                                         class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
                                         placeholder="Question"
                                     />
@@ -206,59 +216,61 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                                     </button>
                                 </div>
-                                <textarea
-                                    onchange="updateQuestion(${sIdx}, ${qIdx}, 'answer', this.value)"
-                                    class="w-full ml-8 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500"
-                                    rows="3"
-                                    placeholder="Answer"
-                                >${q.answer}</textarea>
 
-                                <!-- Images Section -->
-                                <div class="ml-8 mt-3">
-                                    <div class="flex items-center justify-between mb-2">
-                                        <span class="text-sm font-medium text-gray-700">Images</span>
-                                        <button onclick="addImage(${sIdx}, ${qIdx})" class="px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded hover:bg-blue-200 transition-colors flex items-center gap-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                                            Add Image
-                                        </button>
-                                    </div>
-                                    ${q.images && q.images.length > 0 ? `
-                                        <div class="space-y-2">
-                                            ${q.images.map((img, imgIdx) => `
-                                                <div class="border border-gray-300 rounded-lg p-2 bg-white">
-                                                    <div class="flex gap-2 mb-2">
-                                                        <input
-                                                            type="text"
-                                                            value="${img.url}"
-                                                            onchange="updateImage(${sIdx}, ${qIdx}, ${imgIdx}, 'url', this.value); renderSections();"
-                                                            class="flex-1 px-2 py-1 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-purple-500"
-                                                            placeholder="Image URL"
+                                <!-- Steps -->
+                                <div class="ml-8 space-y-3">
+                                    ${q.steps && q.steps.map((step, stepIdx) => `
+                                        <div class="border border-gray-300 rounded-lg p-3 bg-white">
+                                            <div class="flex items-start gap-2 mb-2">
+                                                <span class="flex-shrink-0 w-6 h-6 bg-indigo-600 text-white rounded-full flex items-center justify-center text-xs font-semibold">
+                                                    ${stepIdx + 1}
+                                                </span>
+                                                <textarea
+                                                    onchange="updateStepText(${sIdx}, ${qIdx}, ${stepIdx}, this.value)"
+                                                    class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 text-sm"
+                                                    rows="2"
+                                                    placeholder="Step description"
+                                                >${step.text}</textarea>
+                                                <button onclick="deleteStep(${sIdx}, ${qIdx}, ${stepIdx})" class="p-1 text-red-600 hover:bg-red-50 rounded transition-colors">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                                                </button>
+                                            </div>
+
+                                            <!-- Image for this step -->
+                                            <div class="ml-8 mt-2">
+                                                <label class="block text-xs font-medium text-gray-600 mb-1">Step Image (optional)</label>
+                                                <input
+                                                    type="text"
+                                                    value="${step.image.url}"
+                                                    onchange="updateStepImageUrl(${sIdx}, ${qIdx}, ${stepIdx}, this.value); renderSections();"
+                                                    class="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-purple-500 mb-1"
+                                                    placeholder="Image URL"
+                                                />
+                                                <input
+                                                    type="text"
+                                                    value="${step.image.caption}"
+                                                    onchange="updateStepImageCaption(${sIdx}, ${qIdx}, ${stepIdx}, this.value)"
+                                                    class="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-purple-500"
+                                                    placeholder="Image caption"
+                                                />
+                                                ${step.image.url ? `
+                                                    <div class="mt-2 border border-gray-200 rounded overflow-hidden">
+                                                        <img 
+                                                            src="${step.image.url}" 
+                                                            alt="Preview"
+                                                            class="w-full h-24 object-cover"
+                                                            onerror="this.style.display='none'"
                                                         />
-                                                        <button onclick="deleteImage(${sIdx}, ${qIdx}, ${imgIdx})" class="p-1 text-red-600 hover:bg-red-50 rounded transition-colors">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-                                                        </button>
                                                     </div>
-                                                    <input
-                                                        type="text"
-                                                        value="${img.caption || ''}"
-                                                        onchange="updateImage(${sIdx}, ${qIdx}, ${imgIdx}, 'caption', this.value)"
-                                                        class="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-purple-500"
-                                                        placeholder="Caption (optional)"
-                                                    />
-                                                    ${img.url ? `
-                                                        <div class="mt-2 border border-gray-200 rounded overflow-hidden">
-                                                            <img 
-                                                                src="${img.url}" 
-                                                                alt="Preview"
-                                                                class="w-full h-32 object-cover"
-                                                                onerror="this.style.display='none'"
-                                                            />
-                                                        </div>
-                                                    ` : ''}
-                                                </div>
-                                            `).join('')}
+                                                ` : ''}
+                                            </div>
                                         </div>
-                                    ` : ''}
+                                    `).join('')}
+
+                                    <button onclick="addStep(${sIdx}, ${qIdx})" class="ml-8 px-3 py-1 text-xs bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors flex items-center gap-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                        Add Step
+                                    </button>
                                 </div>
                             </div>
                         `).join('')}

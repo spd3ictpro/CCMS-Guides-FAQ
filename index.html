@@ -13,7 +13,7 @@
             transition: max-height 0.3s ease-out;
         }
         .collapsible-content.active {
-            max-height: 5000px;
+            max-height: 10000px;
             transition: max-height 0.5s ease-in;
         }
     </style>
@@ -27,10 +27,6 @@
                     <h1 id="page-title" class="text-3xl font-bold text-indigo-900 mb-2">CCMS Helpdesk FAQ</h1>
                     <p id="page-subtitle" class="text-gray-600">Comprehensive Care Management System - Malaysia</p>
                 </div>
-                <a href="editor.html" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
-                    Edit FAQs
-                </a>
             </div>
 
             <!-- Search Box -->
@@ -94,10 +90,13 @@
             const term = searchTerm.toLowerCase();
             return faqData.sections.map(section => ({
                 ...section,
-                questions: section.questions.filter(q =>
-                    q.question.toLowerCase().includes(term) ||
-                    q.answer.toLowerCase().includes(term)
-                )
+                questions: section.questions.filter(q => {
+                    const questionMatch = q.question.toLowerCase().includes(term);
+                    const stepsMatch = q.steps && q.steps.some(step => 
+                        step.text.toLowerCase().includes(term)
+                    );
+                    return questionMatch || stepsMatch;
+                })
             })).filter(section => section.questions.length > 0);
         }
 
@@ -179,28 +178,37 @@
                                 
                                 <div id="question-content-${q.id}" class="collapsible-content ${expandedQuestions[q.id] ? 'active' : ''}">
                                     <div class="px-6 pb-4 pt-2 bg-gray-50">
-                                        <div class="ml-16 text-gray-700 whitespace-pre-line leading-relaxed">
-                                            ${q.answer}
-                                        </div>
-                                        ${q.images && q.images.length > 0 ? `
-                                            <div class="ml-16 mt-4 space-y-3">
-                                                ${q.images.map((img, idx) => `
-                                                    <div class="border border-gray-200 rounded-lg overflow-hidden bg-white">
-                                                        <img 
-                                                            src="${img.url}" 
-                                                            alt="${img.caption || `Image ${idx + 1}`}"
-                                                            class="w-full h-auto"
-                                                            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'200\\'%3E%3Crect fill=\\'%23f3f4f6\\' width=\\'400\\' height=\\'200\\'/%3E%3Ctext x=\\'50%25\\' y=\\'50%25\\' text-anchor=\\'middle\\' fill=\\'%239ca3af\\' font-family=\\'sans-serif\\' font-size=\\'14\\'%3EImage not available%3C/text%3E%3C/svg%3E'"
-                                                        />
-                                                        ${img.caption ? `
-                                                            <div class="px-4 py-2 bg-gray-50 text-sm text-gray-600 border-t border-gray-200">
-                                                                ${img.caption}
-                                                            </div>
-                                                        ` : ''}
+                                        <div class="ml-16 space-y-4">
+                                            ${q.steps && q.steps.map((step, stepIdx) => `
+                                                <div class="border-l-4 border-indigo-300 pl-4">
+                                                    <div class="flex items-start gap-3">
+                                                        <span class="flex-shrink-0 w-7 h-7 bg-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-semibold">
+                                                            ${stepIdx + 1}
+                                                        </span>
+                                                        <div class="flex-1">
+                                                            <p class="text-gray-700 whitespace-pre-line leading-relaxed">
+                                                                ${step.text}
+                                                            </p>
+                                                            ${step.image && step.image.url ? `
+                                                                <div class="mt-3 border border-gray-200 rounded-lg overflow-hidden bg-white">
+                                                                    <img 
+                                                                        src="${step.image.url}" 
+                                                                        alt="${step.image.caption || `Step ${stepIdx + 1}`}"
+                                                                        class="w-full h-auto"
+                                                                        onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'400\\' height=\\'200\\'%3E%3Crect fill=\\'%23f3f4f6\\' width=\\'400\\' height=\\'200\\'/%3E%3Ctext x=\\'50%25\\' y=\\'50%25\\' text-anchor=\\'middle\\' fill=\\'%239ca3af\\' font-family=\\'sans-serif\\' font-size=\\'14\\'%3EImage not available%3C/text%3E%3C/svg%3E'"
+                                                                    />
+                                                                    ${step.image.caption ? `
+                                                                        <div class="px-4 py-2 bg-gray-50 text-sm text-gray-600 border-t border-gray-200">
+                                                                            ${step.image.caption}
+                                                                        </div>
+                                                                    ` : ''}
+                                                                </div>
+                                                            ` : ''}
+                                                        </div>
                                                     </div>
-                                                `).join('')}
-                                            </div>
-                                        ` : ''}
+                                                </div>
+                                            `).join('')}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

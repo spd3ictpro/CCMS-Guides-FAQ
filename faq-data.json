@@ -9,14 +9,70 @@
         {
           "id": "q1",
           "question": "How do I reset my CCMS password?",
-          "answer": "To reset your password:\n1. Click 'Forgot Password' on the login page\n2. Enter your registered email address\n3. Check your email for the reset link (valid for 24 hours)\n4. Create a new password meeting security requirements (minimum 8 characters, including uppercase, lowercase, and numbers)\n5. Contact IT Helpdesk at ext. 2100 if you don't receive the email within 15 minutes",
-          "images": []
+          "steps": [
+            {
+              "text": "Click 'Forgot Password' on the login page",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Enter your registered email address",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Check your email for the reset link (valid for 24 hours)",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Create a new password meeting security requirements (minimum 8 characters, including uppercase, lowercase, and numbers)",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Contact IT Helpdesk at ext. 2100 if you don't receive the email within 15 minutes",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            }
+          ]
         },
         {
           "id": "q2",
           "question": "Why is my account locked?",
-          "answer": "Accounts are automatically locked after 5 failed login attempts for security purposes. The lock will automatically expire after 30 minutes. If you need immediate access, contact the IT Helpdesk at ext. 2100 with your staff ID for manual unlock. Common causes include: entering incorrect password multiple times, caps lock being enabled, or using an old password.",
-          "images": []
+          "steps": [
+            {
+              "text": "Accounts are automatically locked after 5 failed login attempts for security purposes. The lock will automatically expire after 30 minutes.",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "If you need immediate access, contact the IT Helpdesk at ext. 2100 with your staff ID for manual unlock.",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Common causes include: entering incorrect password multiple times, caps lock being enabled, or using an old password.",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            }
+          ]
         }
       ]
     },
@@ -27,14 +83,77 @@
         {
           "id": "q3",
           "question": "How do I search for a patient record?",
-          "answer": "You can search for patient records using:\n• IC Number (most accurate)\n• Patient ID/MRN\n• Name (surname first, then given name)\n• Contact number\n\nNavigate to the 'Patient Search' module, enter at least one search criterion, and click 'Search'. Results will display matching records. Click on a record to view full details. Ensure you have appropriate access permissions for the department.",
-          "images": []
+          "steps": [
+            {
+              "text": "You can search for patient records using:\n• IC Number (most accurate)\n• Patient ID/MRN\n• Name (surname first, then given name)\n• Contact number",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Navigate to the 'Patient Search' module and enter at least one search criterion",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Click 'Search'. Results will display matching records. Click on a record to view full details.",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Ensure you have appropriate access permissions for the department.",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            }
+          ]
         },
         {
           "id": "q4",
           "question": "What do I do if patient information is incorrect?",
-          "answer": "For incorrect patient information:\n1. Do NOT modify demographic data directly\n2. Contact the Registration Department at ext. 3200\n3. Submit a 'Patient Data Amendment Form' (Form CCMS-001)\n4. Provide supporting documentation (IC copy, proof of address, etc.)\n5. Amendments are typically processed within 2 working days\n\nFor clinical data corrections, follow your department's clinical documentation amendment protocol.",
-          "images": []
+          "steps": [
+            {
+              "text": "Do NOT modify demographic data directly",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Contact the Registration Department at ext. 3200",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Submit a 'Patient Data Amendment Form' (Form CCMS-001)",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Provide supporting documentation (IC copy, proof of address, etc.)",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Amendments are typically processed within 2 working days. For clinical data corrections, follow your department's clinical documentation amendment protocol.",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            }
+          ]
         }
       ]
     }
