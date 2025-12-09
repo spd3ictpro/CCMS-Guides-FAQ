@@ -10,8 +10,8 @@ A static FAQ system for Comprehensive Care Management System (Malaysia) with ste
 - 🔢 Automatic hierarchical numbering
 
 ## Quick Start
-1. Visit the FAQ: https://YOUR-USERNAME.github.io/ccms-faq/
-2. Edit FAQs: https://YOUR-USERNAME.github.io/ccms-faq/editor.html
+1. Visit the FAQ: https://spd3ictpro.github.io/ccms-faq/
+2. Edit FAQs: https://spd3ictpro.github.io/ccms-faq/editor.html
 
 ## How to Update
 1. Open editor.html
