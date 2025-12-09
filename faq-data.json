@@ -126,6 +126,80 @@
               }
             }
           ]
+        },
+        {
+          "id": "q-1765280861084",
+          "question": "New Question",
+          "steps": [
+            {
+              "text": "Step 1 description",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section-1765280865463",
+      "title": "Print ",
+      "questions": [
+        {
+          "id": "q-1765280876226",
+          "question": "How to print the same content duplicated side-by-side on one physical page (e.g., two identical halves on A4), using LibreOffice Write",
+          "steps": [
+            {
+              "text": "Buka consultation yang anda nak print.",
+              "image": {
+                "url": "https://i.imgur.com/vyCWNf2.png",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Tekan Print.  ",
+              "image": {
+                "url": "https://i.imgur.com/4js1jzp.png",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Dalam ruangan Pages, taip: 1, 1  (Ini bermaksud: Print halaman 1 dua kali)",
+              "image": {
+                "url": "https://i.imgur.com/DwjIfwj.png",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Di bahagian Pages per Sheet, pilih 2 pages per sheet.",
+              "image": {
+                "url": "https://i.imgur.com/30dB02e.png",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Pastikan susunan (Order) adalah Left → Right dan Page Layout dalam keadaan Landscape",
+              "image": {
+                "url": "https://i.imgur.com/WdLl3s8.png",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Tekan Print.",
+              "image": {
+                "url": "https://i.imgur.com/KyWCAu6.png",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Hasilnya: Satu kertas A4 akan ada dua salinan consultation yang sama, diletakkan side-by-side. Ketatapan ini adalah sesuai untuk digunakan bagi kegunaan Maternal and Child Health Clinic di mana ia memerlukan dua salinan fizikal",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            }
+          ]
         }
       ]
     }
