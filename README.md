@@ -11,7 +11,7 @@ A static FAQ system for Comprehensive Care Management System (Malaysia) with ste
 
 ## Quick Start
 1. Visit the FAQ: https://spd3ictpro.github.io/CCMS-Guides-FAQ
-2. Edit FAQs: https://spd3ictpro.github.io/CCMS-Guides-FAQ/editor.html
+2. Edit FAQs    : https://spd3ictpro.github.io/CCMS-Guides-FAQ/editor.html
 
 ## How to Update
 1. Open editor.html
