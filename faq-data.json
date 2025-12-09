@@ -1,6 +1,6 @@
 {
   "title": "CCMS Helpdesk FAQ",
-  "subtitle": "Comprehensive Care Management System - Malaysia",
+  "subtitle": "Cloud Clinic Management System",
   "sections": [
     {
       "id": "login-access",
@@ -11,35 +11,21 @@
           "question": "How do I reset my CCMS password?",
           "steps": [
             {
-              "text": "Click 'Forgot Password' on the login page",
+              "text": "Please contact your Clinic system administrator (MOIC/PPP/FMS)",
               "image": {
                 "url": "",
                 "caption": ""
               }
             },
             {
-              "text": "Enter your registered email address",
+              "text": "Admin will give you a new temporary pasword",
               "image": {
                 "url": "",
                 "caption": ""
               }
             },
             {
-              "text": "Check your email for the reset link (valid for 24 hours)",
-              "image": {
-                "url": "",
-                "caption": ""
-              }
-            },
-            {
-              "text": "Create a new password meeting security requirements (minimum 8 characters, including uppercase, lowercase, and numbers)",
-              "image": {
-                "url": "",
-                "caption": ""
-              }
-            },
-            {
-              "text": "Contact IT Helpdesk at ext. 2100 if you don't receive the email within 15 minutes",
+              "text": "Log in using the temporary password and change to the new desired password",
               "image": {
                 "url": "",
                 "caption": ""
@@ -52,21 +38,7 @@
           "question": "Why is my account locked?",
           "steps": [
             {
-              "text": "Accounts are automatically locked after 5 failed login attempts for security purposes. The lock will automatically expire after 30 minutes.",
-              "image": {
-                "url": "",
-                "caption": ""
-              }
-            },
-            {
-              "text": "If you need immediate access, contact the IT Helpdesk at ext. 2100 with your staff ID for manual unlock.",
-              "image": {
-                "url": "",
-                "caption": ""
-              }
-            },
-            {
-              "text": "Common causes include: entering incorrect password multiple times, caps lock being enabled, or using an old password.",
+              "text": "Accounts are automatically locked after 3-5 failed login attempts for security purposes. System Admin will be able to unlock your account.",
               "image": {
                 "url": "",
                 "caption": ""
