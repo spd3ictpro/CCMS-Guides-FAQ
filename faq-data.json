@@ -38,7 +38,7 @@
           "question": "Why is my account locked?",
           "steps": [
             {
-              "text": "Accounts are automatically locked after 3-5 failed login attempts for security purposes. System Admin will be able to unlock your account.",
+              "text": "Accounts are automatically locked after 3-5 failed login attempts for security purposes. Please contact your clinic admin.",
               "image": {
                 "url": "",
                 "caption": ""
@@ -126,19 +126,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "q-1765280861084",
-          "question": "New Question",
-          "steps": [
-            {
-              "text": "Step 1 description",
-              "image": {
-                "url": "",
-                "caption": ""
-              }
-            }
-          ]
         }
       ]
     },
@@ -194,6 +181,39 @@
             },
             {
               "text": "Hasilnya: Satu kertas A4 akan ada dua salinan consultation yang sama, diletakkan side-by-side. Ketatapan ini adalah sesuai untuk digunakan bagi kegunaan Maternal and Child Health Clinic di mana ia memerlukan dua salinan fizikal",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section-1765541299159",
+      "title": "Technical issue",
+      "questions": [
+        {
+          "id": "q-1765541339883",
+          "question": "Prescription window terlampau besar bila tekan “Create Repeat” (terjadi kepada laptop yang beresolusi rendah)",
+          "steps": [
+            {
+              "text": "Tukar Windows Display Scaling : \n• Right click desktop → Display settings\n• Scale → 125%\n(Nota: Font CCMS akan jadi kecil lepas ni)\n",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "New stepBetulkan Font CCMS supaya senang baca\n• Buka CCMS → User → PC Setting → User Interface → Font Size → Font Size Adjustment\n• Naikkan ikut keselesaan (eg :+1 / +2)",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Hasil:\nWindow “Create Repeat” akan muat screen semula & OK button boleh nampak.\nFont CCMS pun kekal jelas dan tidak terlalu kecil",
               "image": {
                 "url": "",
                 "caption": ""
