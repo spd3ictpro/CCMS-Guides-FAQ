@@ -222,6 +222,67 @@
           ]
         }
       ]
+    },
+    {
+      "id": "section-1765785173536",
+      "title": "Registration",
+      "questions": [
+        {
+          "id": "q-1765785237044",
+          "question": "Registering a newborn without IC Number ",
+          "steps": [
+            {
+              "text": "Register a patient ✓ At the search button, fill the name as ‘Baby of\nMother’s Name’ and fill in the baby’s Date of\nBirth and click ‘Search’.\n✓ Leave the IC Number field empty, but fill the\nParent/Guardian ID. Please ensure that the age\nof baby is less than 1 year old for the field\n‘Parent/Guardian ID’ to appear.",
+              "image": {
+                "url": "https://imgur.com/t66yprz",
+                "caption": ""
+              }
+            },
+            {
+              "text": "2. Fill in other registration details\n✓ Complete the registration by filling in other fields\neg: MRN, Patient’s Name and Gender.\n✓ Choose MRN ‘01’ for first child and ‘02’ for\nsecond child and follow through.",
+              "image": {
+                "url": "https://imgur.com/cgMGlks",
+                "caption": ""
+              }
+            },
+            {
+              "text": "✓ Click OK and Save to finish registering the\nnewborn.",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "3. A Newborn’s profile with Parent’s ID will\nbe created",
+              "image": {
+                "url": "https://imgur.com/3NfLw3Q",
+                "caption": ""
+              }
+            },
+            {
+              "text": "4. To search the Newborn’s profile\n✓ Find the Newborn using the ‘Parent/Guardian ID’\nby clicking the ‘Advanced’ button.",
+              "image": {
+                "url": "https://imgur.com/nPrKqxg",
+                "caption": ""
+              }
+            },
+            {
+              "text": "✓ All newborn using the ‘Parent/Guardian ID’ will\nbe visible.",
+              "image": {
+                "url": "https://imgur.com/nvArIRn",
+                "caption": ""
+              }
+            },
+            {
+              "text": "✓ To change or add the IC number (once the child\nhas it), click on the button ‘Security Controlled\nProcedure’ to add the new IC number.\n✓ Then, click on \"Update pt demographic details\" to\nchange baby's name or update any baby's\ndemographic details.\n✓ Click OK and Save to confirm changes.",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
