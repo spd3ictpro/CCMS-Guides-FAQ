@@ -45,6 +45,61 @@
               }
             }
           ]
+        },
+        {
+          "id": "q-1773845710520",
+          "question": "I am an admin, how do i reset my user password?",
+          "steps": [
+            {
+              "text": "Login to your account",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Look for Setup ",
+              "image": {
+                "url": "https://i.imgur.com/NUtPfpp.png",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Go to User & Policy > Staff and organization setup",
+              "image": {
+                "url": "https://i.imgur.com/fVaYzkI.png",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Search for the user that you want to reset the password , and click change password",
+              "image": {
+                "url": "https://i.imgur.com/yv7k65B.png",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Click continue ",
+              "image": {
+                "url": "https://i.imgur.com/u4Z4vUw.png",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Copy the user new password and click accept ",
+              "image": {
+                "url": "https://i.imgur.com/1RTkhd6.png",
+                "caption": ""
+              }
+            },
+            {
+              "text": "The new password can be use by the user, ask user to change their password once they able to login ",
+              "image": {
+                "url": "https://i.imgur.com/tkSUCZz.png",
+                "caption": ""
+              }
+            }
+          ]
         }
       ]
     },
@@ -283,6 +338,11 @@
           ]
         }
       ]
+    },
+    {
+      "id": "section-1773845977337",
+      "title": "Prescription of medication",
+      "questions": []
     }
   ]
 }
