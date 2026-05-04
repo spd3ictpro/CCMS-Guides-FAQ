@@ -181,6 +181,40 @@
               }
             }
           ]
+        },
+        {
+          "id": "q-1777884876604",
+          "question": "How to record confidential notes ofr sensitive cases? ( eg: STD/Psychiatric cases)",
+          "steps": [
+            {
+              "text": "In the patient's record, go to Clinical Tree",
+              "image": {
+                "url": "",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Locate Confidential Notes",
+              "image": {
+                "url": "https://imgur.com/a/bvdDxoy",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Right-click and select \"Confidential Notes\"",
+              "image": {
+                "url": "https://imgur.com/RnDqQKx",
+                "caption": ""
+              }
+            },
+            {
+              "text": "Set access permisions by selecting either specific staff members or designated teams who are allowed to view the confidential notes.\nWrite the confidential notes on the left side of the box",
+              "image": {
+                "url": "https://imgur.com/DDow4Mk",
+                "caption": ""
+              }
+            }
+          ]
         }
       ]
     },
